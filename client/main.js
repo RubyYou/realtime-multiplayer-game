@@ -43,7 +43,5 @@ Template.input.events({
   }
 
   });
-  
-  console.log("Meteor.isClient:" + Meteor.isClient);
 
 }

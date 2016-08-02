@@ -3,10 +3,15 @@
 </head>
 
 <body>
-  <h1>chat app</h1>
-  {{> hello}}
-  {{> input}}
-  {{> messages}}
+  <h1>Multi player game </h1>
+  <div class="left">
+  	{{> game }}
+  </div>
+  <div class="right">
+  	{{> hello}}
+  	{{> input}}
+  	{{> messages}}
+  </div>
 </body>
 
 <template name="hello">
@@ -17,7 +22,7 @@
 	{{#each messages}}
 	<p class="message">
 		<strong class="name">{{name}}:</strong> {{message}}<br/>
-		<span class="left" id="chatID" data-id={{_id}} >x</span>
+		<span class="remove" id="chatID" data-id={{_id}} >x</span>
 	</p>
 	{{/each}}
 </template>
@@ -26,4 +31,8 @@
 	<p>Messages: 
 		<input type="text" id="message" />
 	</p>
+</template>
+
+<template name="game">
+	<canvas id="gameCanvas" width="900" height="500"></canvas>
 </template>
