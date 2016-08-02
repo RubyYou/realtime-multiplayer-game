@@ -13,6 +13,9 @@ var player2Score = 0;
 const PADDLE_HEIGHT = 100;
 const PADDLE_THICKNESS = 10;
 
+Meteor.startup(function () {
+    init();
+});
 
 function calcMousePos(event){
     var rect = canvas.getBoundingClientRect();
@@ -26,7 +29,7 @@ function calcMousePos(event){
     };
 }
 
-window.onload = function(){
+function init(){
     canvas = document.getElementById('gameCanvas');
     canvasContext = canvas.getContext('2d');
 
@@ -88,6 +91,9 @@ function move(){
     if(ballY > canvas.height || ballY < 0){
         ballSpeedY = - ballSpeedY;
     }
+
+    Game.insert({player1: player1Score, player2: player1Score});
+    console.log(Game);
 }
 
 function computerMove(){

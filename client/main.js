@@ -13,7 +13,7 @@ Template.messages.helpers({
 
 Template.messages.events({
   'click #chatID': function (event){
-      console.log('hehe', chatID);
+      console.log('chatID', chatID);
      var chatID = event.target.getAttribute('data-id');
      
      Messages.remove(chatID);
