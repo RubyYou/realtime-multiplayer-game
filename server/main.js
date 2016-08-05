@@ -7,8 +7,5 @@ Meteor.startup(() => {
     if(Meteor.isServer){
         console.log("Meteor.isServer", Meteor.isServer);
     }
-
-    // Meteor.publish('users', function(){
-    //    return Meteor.users.find({}, {username:1, profile:1});
-    // });
+    
 });

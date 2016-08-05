@@ -1,5 +1,5 @@
 <head>
-  <title>simple</title>
+  <title>multi player name</title>
 </head>
 
 <body>
@@ -8,31 +8,44 @@
   	{{> game }}
   </div>
   <div class="right">
-  	{{> hello}}
-  	{{> input}}
-  	{{> messages}}
+	{{> loginStatus}}
+	{{> chat}}
   </div>
 </body>
 
-<template name="hello">
-	<p>What is your name: <input type="text" id="name" /></p>
+<!-- Login and Log out Area -->
+<template name="loginStatus">
+	{{#if signedUp }}
+		{{ username }} has sign up for the current game
+	{{else}}
+		<form>
+			<input type="text" id="username" placeholder="username" />
+			<button> Sign up to play Game </button>
+		</form>
+	{{/if}}
 </template>
 
-<template name="messages">
-	{{#each messages}}
-	<p class="message">
-		<strong class="name">{{name}}:</strong> {{message}}<br/>
-		<span class="remove" id="chatID" data-id={{_id}} >x</span>
-	</p>
-	{{/each}}
+
+<!-- Chat Template -->
+<template name="chat">
+	{{#if signedUp}}
+		<p>Messages:
+			<input type="text" id="message" />
+		</p>
+
+		{{#each messages}}
+		<p class="message">
+			<strong class="name">{{name}}:</strong> {{message}}<br/>
+			<span class="remove" id="chatID" data-id={{_id}} >x</span>
+		</p>
+		{{/each}}
+	{{else}}
+		<p><strong>Game Result:</strong></p>
+		<!--here should have the game result in collections -->
+	{{/if}}
 </template>
 
-<template name="input">
-	<p>Messages: 
-		<input type="text" id="message" />
-	</p>
-</template>
-
+<!-- Game area -->
 <template name="game">
-	<canvas id="gameCanvas" width="900" height="500"></canvas>
+	{{ game }}
 </template>

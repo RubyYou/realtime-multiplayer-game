@@ -1,4 +1,4 @@
 import { Mongo } from 'meteor/mongo';
 
-Messages = new Mongo.Collection('messages');
-Game = new Mongo.Collection('game');
+export const Messages = new Mongo.Collection('messages');
+export const Game = new Mongo.Collection('game');
