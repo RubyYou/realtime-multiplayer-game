@@ -30,10 +30,6 @@ if(Meteor.isClient){
 
     function update(){
         characterMove();
-
-        // output all the user on the game
-        // player = Players.find().fetch();
-
     }
 
 
@@ -110,4 +106,5 @@ if(Meteor.isClient){
 // reset the user if tab closed
 window.onbeforeunload = function(){
     Players.remove(playerId);
+    Messages.remove({name: player[playerId].name});
 };

@@ -3,10 +3,7 @@
 </head>
 
 <body>
-  <h1>Multi player game </h1>
-  <div class="left">
-  	{{> game }}
-  </div>
+  <h1>POKEMAN</h1>
   <div class="right">
 	{{> loginStatus}}
 	{{> chat}}
@@ -20,7 +17,7 @@
 	{{else}}
 		<form>
 			<input type="text" id="username" placeholder="username" />
-			<button> Sign up to play Game </button>
+			<button> Sign up </button>
 		</form>
 	{{/if}}
 </template>
@@ -39,13 +36,5 @@
 			<span class="remove" id="chatID" data-id={{_id}} >x</span>
 		</p>
 		{{/each}}
-	{{else}}
-		<p><strong>Game Result:</strong></p>
-		<!--here should have the game result in collections -->
 	{{/if}}
-</template>
-
-<!-- Game area -->
-<template name="game">
-	{{ game }}
 </template>
