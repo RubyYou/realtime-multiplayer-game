@@ -1,11 +1,13 @@
-import { Meteor } from 'meteor/meteor';
-import { Messages } from '../api/messages';
-import { Game } from '../api/messages';
+let lastUpdated;
+let framesPerSecond = 10;
+let millisecondsPerFrame = 1000 / framesPerSecond;
+
 
 Meteor.startup(() => {
-  // code to run on server at startup
     if(Meteor.isServer){
-        console.log("Meteor.isServer", Meteor.isServer);
+        //Players.remove({});
+        Meteor.publish('Players', function(){
+            return Players.find().fetch();
+        });
     }
-    
 });

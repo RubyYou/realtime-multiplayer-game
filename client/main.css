@@ -27,6 +27,5 @@ input{
 .right{
     float:left;
     display: inline-block;
-    width: calc(100% - 950px );
     margin:20px
 }
