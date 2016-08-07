@@ -70,13 +70,6 @@ if(Meteor.isClient){
         }
     }
 
-    function playerRemove(){
-        // if (!Session.get('player')){
-        //     Players.remove(player.id);
-        //     console.log('player removed', player.id );
-        // }
-    }
-
     function tracking(){
 
         Players.find().observe({

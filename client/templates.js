@@ -1,8 +1,11 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { GAME_WIDTH, GAME_HEIGHT} from '../common/const';
 import './main.html';
 import { Session } from 'meteor/session';
-let rand = Math.floor((Math.random() * 600) + 1);
+let randx = Math.floor((Math.random() * GAME_WIDTH) + 1);
+let randy = Math.floor((Math.random() * GAME_HEIGHT) + 1);
+
 
 if (Meteor.isClient) {
 
@@ -11,23 +14,13 @@ if (Meteor.isClient) {
         'click button': (evt, template) => {
             evt.preventDefault();
             let username = template.find('#username').value;
-            let x = rand;
-            let y = rand;
-            // let image = game.add.sprite(x, y, 'pikachu');
-            // let name = game.add.text((x + 30), (y + 100), username,
-            //             {fill:"#fff", align: "center", font: "20px Arial"});
-            // name.anchor.setTo(0.5, 0.5);
 
             playerId = Players.insert({
                 name: username,
                 sprite: 'pikachu',
-                position: {x: x, y: y},
+                position: {x: randx, y: randy},
                 time: Date.now()
             });
-
-            // player[playerId] = game.add.group();
-            // player[playerId].add(image);
-            // player[playerId].add(name);
 
             Session.set('playerId', playerId);
         }
