@@ -25,7 +25,9 @@ Messages = new Mongo.Collection('messages');
 Players = new Mongo.Collection('players');
 ```
 
-Now we can create a simple html template for user to signup join the game.  
+Now we can create a simple html template for user to signup join the game.
+As Pokeman is so popular, that's borrow some of its characters and icons.
+
 ```
 -> client/main.html
 
@@ -34,10 +36,10 @@ Now we can create a simple html template for user to signup join the game.
 </head>
 
 <body>
-  <h1>POKEMAN</h1>
-  <div class="right">
-  	{{> loginStatus}}
-  	{{> chat}}
+ <div class="right">
+	<img class="logo" src="/icon.png" />
+	{{> loginStatus}}
+	{{> chat}}
   </div>
 </body>
 
@@ -218,7 +220,7 @@ function characterMove(){
     }
 }
 ```
-in the tracking, you basically need to mirror the same changes from Players table to the client,
+in the tracking function, you basically need to mirror the same changes from Players table to the client,
 Therefore, you will be able to see other users and interact with them in realtime.
 
 ```
