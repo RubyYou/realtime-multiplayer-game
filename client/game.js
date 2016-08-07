@@ -90,6 +90,7 @@ if(Meteor.isClient){
         player[id] = game.add.group();
         player[id].add(image);
         player[id].add(name);
+        player[id].name = newPlayer.name;
     }
 
     function onPlayerMoved(playerMoved){

@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import { GAME_WIDTH, GAME_HEIGHT} from '../common/const';
+import { GAME_WIDTH, GAME_HEIGHT } from '../common/const';
 import './main.html';
 import { Session } from 'meteor/session';
 let randx = Math.floor((Math.random() * GAME_WIDTH) + 1);
@@ -33,7 +33,8 @@ if (Meteor.isClient) {
             }
         },
         'username': function(){
-            return Players.find({_id: Session.get('playerId')}).fetch()[0].name;
+
+            return player[Session.get('playerId')].name;
         }
     });
     
@@ -52,9 +53,8 @@ if (Meteor.isClient) {
     Template.chat.events({
         'keydown input#message' : function (event) {
             if (event.which == 13) {
-                var username = Players.find({_id: playerId}).fetch()[0].name;
+                var username = player[Session.get('playerId')].name;
                 var message = document.getElementById('message');
-                
                 if (message.value != '') {
                     Messages.insert({
                         name: username,
