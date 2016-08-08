@@ -261,3 +261,8 @@ window.onbeforeunload = function(){
 };
 ```
 ![alt tag](public/finalscreen.png)
+
+Here is the video to demostrate how it works.
+[Video link](https://youtu.be/aad2CedQ0c4)
+
+
