@@ -38,7 +38,7 @@ if (Meteor.isClient) {
         }
     });
     
-    // ---- End of login status
+    // ---- Chat
     Template.chat.helpers({
         'signedUp': function(){
             if(Session.get('playerId')){

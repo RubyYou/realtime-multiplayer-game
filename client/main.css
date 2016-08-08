@@ -1,10 +1,31 @@
 /* CSS declarations go here */
-input{
-	border-color:black;
+#username{
+	border-color:#ff1c1c;
+	padding:10px;
+	float:left;
+	border-style: solid;
 }
+
+button{
+	background:#ff1c1c;
+	color:white;
+	border:none;
+	height:37px;
+	float:left;
+}
+
+button:hover{
+	background:#df1818;
+}
+
 .name{
-	color:red;
+	color:#ff1c1c;
 }
+.logo{
+	width:180px;
+	margin-bottom:20px;
+}
+
 .message{
 	background:#f5f5f5;
 	color:#666;

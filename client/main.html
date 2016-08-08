@@ -3,8 +3,8 @@
 </head>
 
 <body>
-  <h1>POKEMAN</h1>
-  <div class="right">
+ <div class="right">
+	<img class="logo" src="/icon.png" />
 	{{> loginStatus}}
 	{{> chat}}
   </div>
@@ -13,7 +13,7 @@
 <!-- Login and Log out Area -->
 <template name="loginStatus">
 	{{#if signedUp }}
-		{{ username }} has sign up for the current game
+		<p>{{ username }} has sign up for the current game</p>
 	{{else}}
 		<form>
 			<input type="text" id="username" placeholder="username" />
@@ -36,5 +36,6 @@
 			<span class="remove" id="chatID" data-id={{_id}} >x</span>
 		</p>
 		{{/each}}
+
 	{{/if}}
 </template>
