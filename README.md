@@ -230,6 +230,14 @@ in the tracking function, you basically need to mirror the same changes from Pla
 Therefore, you will be able to see other users and interact with them in realtime.
 
 ```
+function tracking(){
+    Players.find().observe({
+    	added: onPlayerAdded,
+    	changed: onPlayerMoved,
+    	removed: onPlayerRemoved
+    });
+}
+
 function onPlayerAdded(newPlayer){
     let x = newPlayer.position.x;
     let y = newPlayer.position.y
