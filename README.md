@@ -97,6 +97,10 @@ if (Meteor.isClient) {
         }
     });
 ```
+Now you have a signup area for the game.  
+
+![alt tag](public/signup.png)
+
 Add Chat template, this will looping all the message information and send to client.
 
 ```
@@ -156,6 +160,8 @@ Add chat functions to insert Message data with username and provide the function
         }
     });
 ```
+![alt tag](public/chat.png)
+
 Now we have a simple chat system, let's add the game in.  
 We use Meteor.startup function to initial the game, currently, we only add one character image and background.
 
@@ -254,4 +260,4 @@ window.onbeforeunload = function(){
     Messages.remove({name: player[playerId].name});
 };
 ```
-
+![alt tag](public/finalscreen.png)
