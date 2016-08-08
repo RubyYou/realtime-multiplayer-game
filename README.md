@@ -2,13 +2,13 @@
 
 Tutorial Part1:
 
-Meteor is a platform (some people describe it is a framework) which bundles nice technology together and allows developers to create a full-stack realtime app.
+Meteor is a platform (some people describe it is a framework) which bundles nice technology together and allows developers to create full-stack realtime apps.
 
 Some of the benefits people describe can be read here: https://www.sitepoint.com/7-reasons-develop-next-web-app-meteor/  
 
 The reason why I chose Meteor is because it's fast to prototype realtime projects without much understanding of backend techs, so you can demo your idea a lot quicker compared to conventional ways.  
 
-To demonstrate this point I am going to create a realtime multip-player app.
+To demonstrate this point I am going to create a realtime multi-player app.
 
 To install meteor, please follow this link `https://www.meteor.com/install`
 
